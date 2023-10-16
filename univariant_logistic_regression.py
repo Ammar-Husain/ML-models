@@ -121,6 +121,7 @@ class LogisticRegression:
         return 1/(1 + np.exp(-z))
       
     def plot_cost(self, X, Y):
+        plt.close("all")
         # initiate experimental weights
         ws = np.linspace(-5, 5, 2000)
         bs = np.linspace(-5, 5, 2000)

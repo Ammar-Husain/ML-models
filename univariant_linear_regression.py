@@ -101,6 +101,7 @@ class LinearRegression:
         return w*X + b
 
     def plot_cost(self, X, Y):
+        plt.close("all")
         # create experimental weights
         ws = np.linspace(-100, 100, 2000)
         bs = np.linspace(-100, 100, 2000)

@@ -9,7 +9,7 @@ class LogisticRegression:
         self.b = b
         self.lr = lr
         
-    def train(self, X, Y, n_iters=2000, learning_curve=False, lr=0):
+    def train(self, X, Y, n_iters=5000, learning_curve=False, lr=0):
         w = self.w if self.w.shape == X.shape[1] else np.zeros(X.shape[1]) # initiate w with zeros if the provided w shape is not suitable
         b = self.b
         if lr == 0:
@@ -116,6 +116,7 @@ class LogisticRegression:
         return equals.mean() # the `False` values treated like 0s and `True` values treated like 1s so the result is a number between 0 and 1 represent the ratio of `True` values in the array (i.e. the ratio of correct predictions that the model made)
     
     def plot_decision_boundary(self, X, Y, boundary_x=None,boundary_y=None, **options):
+        plt.close("all")
         if X.shape[1] > 2:
             print("this function can just plot decision boundary for models that have 2 or less variables")
             return
@@ -181,7 +182,7 @@ if __name__ == "__main__":# so the follwing code will not be exicuted when the m
     # print the wieghts the model choosed
     print(f"W: {model.w}")
     print(f"B: {model.b}")
-    model.plot_decision_boundary(X, Y, pos_color="blue", pos_marker="o", neg_color="red", neg_marker="x",scatter_size=20, boundary_color="green", boundary_linewidth=1, figname="desicsion_boundary")
+    model.plot_decision_boundary(X, Y, pos_color="blue", pos_marker="o", neg_color="red", neg_marker="x",scatter_size=20, boundary_color="green", boundary_linewidth=1, figname="_decision_boundary")
     
     
     """
