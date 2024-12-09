@@ -1,3 +1,3 @@
 plots/
-**.ipynp
-.ipynp_checkpoints/
+**.ipynb
+.ipynb_checkpoints/
